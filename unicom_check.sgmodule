@@ -1,9 +1,7 @@
 #!name=联通wifi电话
 #!desc=wifi
 
-[Script]
-# 联通白名单修改
-Unicom_White_Check = type=http-response, pattern=^https:\/\/m\.client\.10010\.com\/edopinterface\/officialWhite\/checkOfficialWhitePhone, requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/iozxcvb/X/refs/heads/master/unicom_check.js
-
+[Body Rewrite]
+http-response https://m.client.10010.com/edopinterface/officialWhite/checkOfficialWhitePhone 0211 0000
 [MITM]
-hostname = %APPEND% m.client.10010.com
+hostname = m.client.10010.com
